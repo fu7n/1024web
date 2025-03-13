@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程赛事介绍 - 壹零贰肆少儿编程</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #f39c12;
+            --accent-color: #d35400;
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+
+        /* 赛事页面特定样式 */
+        .competitions-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 100px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+        
+        .competitions-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/pattern-bg.png') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        
+        .competition-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+        }
+        
+        .competition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(230, 126, 34, 0.2);
+        }
+
+        .competition-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .competition-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .competition-card .card-img-top {
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .competition-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .competition-info {
+            padding: 30px;
+            background: white;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .competition-tag {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            background: rgba(230, 126, 34, 0.1);
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .competition-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .competition-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        
+        .competition-meta i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .competition-features {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .competition-features:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(230, 126, 34, 0.1);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(230, 126, 34, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: rotate(10deg);
+        }
+
+        .feature-content h4 {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .registration-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-control, .form-select {
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(230, 126, 34, 0.25);
+        }
+
+        .form-label {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            height: 100%;
+        }
+
+        .contact-info i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-info h5 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info .contact-item i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
+        /* 动画效果 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 移动端优�?*/
+        @media (max-width: 768px) {
+            .competitions-header {
+                padding: 60px 0;
+            }
+
+            .competition-card {
+                margin-bottom: 20px;
+            }
+
+            .competition-features {
+                padding: 20px;
+            }
+
+            .feature-item {
+                padding: 15px;
+            }
+
+            .registration-form {
+                padding: 20px;
+            }
+
+            .contact-info {
+                margin-top: 30px;
+                padding: 30px;
+            }
+        }
+
+        /* 装饰元素 */
+        .decoration-dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .competitions-header .decoration-dot:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+
+        .competitions-header .decoration-dot:nth-child(2) {
+            top: 60%;
+            right: 15%;
+        }
+
+        .competitions-header .decoration-dot:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航�?-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">1024少儿编程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door me-2"></i>首页
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-journal-code me-2"></i>课程体系
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="scratch.html">
+                                <i class="bi bi-puzzle me-2"></i>Scratch启蒙
+                            </a></li>
+                            <li><a class="dropdown-item" href="python.html">
+                                <i class="bi bi-code-square me-2"></i>Python进阶
+                            </a></li>
+                            <li><a class="dropdown-item" href="cpp.html">
+                                <i class="bi bi-cpu me-2"></i>C++竞赛
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">
+                                <i class="bi bi-list-stars me-2"></i>全部课程
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-people me-2"></i>关于我们
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="about.html">
+                                <i class="bi bi-building me-2"></i>机构介绍
+                            </a></li>
+                            <li><a class="dropdown-item active" href="competitions.html">
+                                <i class="bi bi-trophy me-2"></i>赛事活动
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-question-circle me-2"></i>帮助与支�?                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="faq.html">
+                                <i class="bi bi-patch-question me-2"></i>常见问题
+                            </a></li>
+                            <li><a class="dropdown-item" href="feedback.html">
+                                <i class="bi bi-chat-left-text me-2"></i>意见反馈
+                            </a></li>
+                            <li><a class="dropdown-item" href="tools.html">
+                                <i class="bi bi-tools me-2"></i>编程工具
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 赛事介绍头部 -->
+    <header class="competitions-header">
+        <div class="decoration-dot"></div>
+        <div class="decoration-dot"></div>
+        <div class="decoration-dot"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-4" data-aos="fade-up">编程赛事活动</h1>
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                        参与高水平的编程竞赛，展示你的创造力和编程实力，开启编程之星的璀璨未�?                    </p>
+                    <div class="d-flex justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#competitions" class="btn btn-light btn-lg">
+                            <i class="bi bi-trophy me-2"></i>浏览赛事
+                        </a>
+                        <a href="#register" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-pencil-square me-2"></i>立即报名
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 赛事列表 -->
+    <section id="competitions" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">精选赛�?/h2>
+            <div class="row">
+                <!-- NOC考试 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="competition-card">
+                        <img src="assets/noc.jpg" class="card-img-top" alt="NOC考试">
+                        <div class="competition-info">
+                            <span class="competition-tag">NOC</span>
+                            <span class="competition-tag">全国�?/span>
+                            <h3 class="h4 mt-3">NOC全国青少年编程能力等级考试</h3>
+                            <p class="text-muted">权威的青少年编程能力评测体系，打造编程学习成长档�?/p>
+                            <div class="competition-meta">
+                                <span><i class="bi bi-calendar3 me-2"></i>全年开放报�?/span>
+                                <span><i class="bi bi-people me-2"></i>6-18�?/span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 信息学奥�?-->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="competition-card">
+                        <img src="assets/noip.jpg" class="card-img-top" alt="信息学奥�?>
+                        <div class="competition-info">
+                            <span class="competition-tag">NOIP</span>
+                            <span class="competition-tag">算法</span>
+                            <h3 class="h4 mt-3">全国青少年信息学奥林匹克竞赛</h3>
+                            <p class="text-muted">最具权威的信息学竞赛，培养算法思维和编程能�?/p>
+                            <div class="competition-meta">
+                                <span><i class="bi bi-calendar3 me-2"></i>10月初�?/span>
+                                <span><i class="bi bi-people me-2"></i>10-18�?/span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 科技创新大赛 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="competition-card">
+                        <img src="assets/innovation.jpg" class="card-img-top" alt="科技创新大赛">
+                        <div class="competition-info">
+                            <span class="competition-tag">创新</span>
+                            <span class="competition-tag">项目�?/span>
+                            <h3 class="h4 mt-3">全国青少年科技创新大赛</h3>
+                            <p class="text-muted">展示创新思维，用编程解决实际问题</p>
+                            <div class="competition-meta">
+                                <span><i class="bi bi-calendar3 me-2"></i>每年3�?/span>
+                                <span><i class="bi bi-people me-2"></i>8-18�?/span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事特色 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">赛事特色</h2>
+            <div class="competition-features" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-trophy"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>权威认证</h4>
+                                <p>获得国家认可的竞赛证书，为升学提供有力支�?/p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>能力提升</h4>
+                                <p>通过竞赛提升编程技能，培养逻辑思维和创新能�?/p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>同伴交流</h4>
+                                <p>结识志同道合的编程爱好者，共同进步与成�?/p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>成长档案</h4>
+                                <p>记录竞赛成绩和进步历程，打造个人特色档�?/p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 报名表单 -->
+    <section id="register" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="section-title" data-aos="fade-up">赛事报名</h2>
+                    <div class="registration-form" data-aos="fade-up">
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">姓名</label>
+                                        <input type="text" class="form-control" placeholder="请输入姓�?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">年龄</label>
+                                        <input type="number" class="form-control" placeholder="请输入年�?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">联系电话</label>
+                                        <input type="tel" class="form-control" placeholder="请输入联系电�?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">电子邮箱</label>
+                                        <input type="email" class="form-control" placeholder="请输入电子邮�?>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">选择赛事</label>
+                                        <select class="form-select">
+                                            <option selected disabled>请选择要参加的赛事</option>
+                                            <option>NOC全国青少年编程能力等级考试</option>
+                                            <option>全国青少年信息学奥林匹克竞赛</option>
+                                            <option>全国青少年科技创新大赛</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">备注信息</label>
+                                        <textarea class="form-control" rows="4" placeholder="请输入其他需要说明的信息"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="bi bi-send me-2"></i>提交报名
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-info-circle"></i>
+                        <h5>咨询方式</h5>
+                        <p>如有任何疑问，欢迎通过以下方式联系我们</p>
+                        <hr class="bg-white opacity-25">
+                        <div class="mb-3">
+                            <i class="bi bi-telephone me-2"></i>
+                            010-10241024
+                        </div>
+                        <div class="mb-3">
+                            <i class="bi bi-envelope me-2"></i>
+                            info@1024coding.com
+                        </div>
+                        <div>
+                            <i class="bi bi-wechat me-2"></i>
+                            关注公众号：1024少儿编程
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>联系我们�?10-10241024 | 北京市海淀区编程大�?024�?/p>
+            <div class="social-links mt-3">
+                <a href="#" class="text-light mx-2"><i class="bi bi-wechat"></i></a>
+                <a href="#" class="text-light mx-2"><i class="bi bi-qq"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // 初始化AOS动画�?        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // 确保导航栏在移动端正常工�?        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有下拉菜单的触发元素
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            
+            // 初始化所有下拉菜�?            var dropdownList = dropdownElementList.map(function(dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl);
+            });
+            
+            // 处理移动端导航栏折叠
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            var navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function() {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程工具 - 壹零贰肆少儿编程</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg inner-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">1024少儿编程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door me-2"></i>首页
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-journal-code me-2"></i>课程体系
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="scratch.html">
+                                <i class="bi bi-puzzle me-2"></i>Scratch启蒙
+                            </a></li>
+                            <li><a class="dropdown-item" href="python.html">
+                                <i class="bi bi-code-square me-2"></i>Python进阶
+                            </a></li>
+                            <li><a class="dropdown-item" href="cpp.html">
+                                <i class="bi bi-cpu me-2"></i>C++竞赛
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">
+                                <i class="bi bi-list-stars me-2"></i>全部课程
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-people me-2"></i>关于我们
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-question-circle me-2"></i>帮助与支持
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="faq.html">
+                                <i class="bi bi-patch-question me-2"></i>常见问题
+                            </a></li>
+                            <li><a class="dropdown-item" href="feedback.html">
+                                <i class="bi bi-chat-left-text me-2"></i>意见反馈
+                            </a></li>
+                            <li><a class="dropdown-item active" href="tools.html">
+                                <i class="bi bi-tools me-2"></i>编程工具
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h1 class="display-5 mb-3">编程学习工具</h1>
+                <p class="lead text-muted">精选优质编程工具，助力学习之旅</p>
+            </div>
+
+            <!-- 工具分类 -->
+            <div class="row g-4">
+                <!-- Scratch工具 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-puzzle me-2"></i>Scratch工具</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>Scratch官方编辑器</h5>
+                                    <p>MIT开发的官方在线Scratch编程环境，支持创建和分享互动故事、游戏和动画。</p>
+                                    <a href="https://scratch.mit.edu/" target="_blank" class="btn btn-sm btn-outline-primary">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Scratch离线编辑器</h5>
+                                    <p>无需联网也能使用的Scratch编程环境，适合网络条件不佳的情况。</p>
+                                    <a href="https://scratch.mit.edu/download" target="_blank" class="btn btn-sm btn-outline-primary">下载工具</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>ScratchJr</h5>
+                                    <p>专为5-7岁儿童设计的简化版Scratch，适合低龄儿童入门编程学习。</p>
+                                    <a href="https://www.scratchjr.org/" target="_blank" class="btn btn-sm btn-outline-primary">了解更多</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python工具 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0"><i class="bi bi-code-square me-2"></i>Python工具</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>Thonny</h5>
+                                    <p>专为初学者设计的Python IDE，界面简洁，内置调试器，适合Python入门学习。</p>
+                                    <a href="https://thonny.org/" target="_blank" class="btn btn-sm btn-outline-success">下载工具</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Replit</h5>
+                                    <p>在线Python编程环境，无需安装，支持多种编程语言，适合随时随地学习。</p>
+                                    <a href="https://replit.com/" target="_blank" class="btn btn-sm btn-outline-success">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Jupyter Notebook</h5>
+                                    <p>交互式编程环境，支持代码、文本和可视化混合展示，适合数据分析学习。</p>
+                                    <a href="https://jupyter.org/" target="_blank" class="btn btn-sm btn-outline-success">了解更多</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C++工具 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-warning text-dark">
+                            <h4 class="mb-0"><i class="bi bi-cpu me-2"></i>C++工具</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>Dev-C++</h5>
+                                    <p>轻量级C++集成开发环境，适合初学者使用，界面简洁易用。</p>
+                                    <a href="https://www.bloodshed.net/devcpp.html" target="_blank" class="btn btn-sm btn-outline-warning">下载工具</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Visual Studio Code</h5>
+                                    <p>微软开发的轻量级代码编辑器，通过插件支持C++开发，功能强大。</p>
+                                    <a href="https://code.visualstudio.com/" target="_blank" class="btn btn-sm btn-outline-warning">下载工具</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>OJ在线评测系统</h5>
+                                    <p>我们的专属在线评测系统，提供算法题目练习和自动评测功能。</p>
+                                    <a href="http://oj.1024code.top/" target="_blank" class="btn btn-sm btn-outline-warning">访问网站</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 通用编程工具 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-info text-white">
+                            <h4 class="mb-0"><i class="bi bi-gear me-2"></i>通用工具</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>GitHub</h5>
+                                    <p>代码托管平台，可以存储和分享项目代码，学习开源项目。</p>
+                                    <a href="https://github.com/" target="_blank" class="btn btn-sm btn-outline-info">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>GitHack</h5>
+                                    <p>Git版本控制图形界面工具，简化Git操作，适合初学者使用。</p>
+                                    <a href="https://www.gitkraken.com/" target="_blank" class="btn btn-sm btn-outline-info">下载工具</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Stack Overflow</h5>
+                                    <p>程序员问答社区，可以查找和解决编程问题，学习最佳实践。</p>
+                                    <a href="https://stackoverflow.com/" target="_blank" class="btn btn-sm btn-outline-info">访问网站</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学习资源 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-secondary text-white">
+                            <h4 class="mb-0"><i class="bi bi-book me-2"></i>学习资源</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>菜鸟教程</h5>
+                                    <p>提供各种编程语言的中文教程，从入门到进阶的系统学习资料。</p>
+                                    <a href="https://www.runoob.com/" target="_blank" class="btn btn-sm btn-outline-secondary">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>LeetCode</h5>
+                                    <p>算法题库和编程挑战平台，提供大量编程练习题，适合算法学习。</p>
+                                    <a href="https://leetcode.cn/" target="_blank" class="btn btn-sm btn-outline-secondary">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>W3School</h5>
+                                    <p>Web开发教程网站，提供HTML、CSS、JavaScript等前端技术学习资料。</p>
+                                    <a href="https://www.w3school.com.cn/" target="_blank" class="btn btn-sm btn-outline-secondary">访问网站</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 竞赛资源 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 tool-card">
+                        <div class="card-header bg-danger text-white">
+                            <h4 class="mb-0"><i class="bi bi-trophy me-2"></i>竞赛资源</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5>洛谷</h5>
+                                    <p>国内知名的信息学竞赛在线评测系统，提供大量NOI、NOIP等竞赛题目。</p>
+                                    <a href="https://www.luogu.com.cn/" target="_blank" class="btn btn-sm btn-outline-danger">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Codeforces</h5>
+                                    <p>国际知名的算法竞赛平台，定期举办比赛，提供丰富的竞赛题库。</p>
+                                    <a href="https://codeforces.com/" target="_blank" class="btn btn-sm btn-outline-danger">访问网站</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>USACO训练网站</h5>
+                                    <p>美国计算机奥林匹克竞赛官方训练平台，提供系统的竞赛训练。</p>
+                                    <a href="https://usaco.org/" target="_blank" class="btn btn-sm btn-outline-danger">访问网站</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工具使用指南 -->
+            <div class="mt-5">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="mb-0"><i class="bi bi-info-circle me-2"></i>工具使用指南</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>如何选择合适的工具？</h4>
+                                <ol>
+                                    <li>根据学习阶段选择对应的工具</li>
+                                    <li>初学者优先选择界面简洁、易上手的工具</li>
+                                    <li>进阶学习可选择功能更丰富的专业工具</li>
+                                    <li>竞赛备战应使用与竞赛环境相似的工具</li>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>工具使用建议</h4>
+                                <ul>
+                                    <li>定期更新工具到最新版本</li>
+                                    <li>学会使用工具的快捷键提高效率</li>
+                                    <li>利用工具的调试功能排查代码问题</li>
+                                    <li>备份重要代码，避免意外丢失</li>
+                                    <li>遇到问题可查阅工具官方文档</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 定制工具服务 -->
+            <div class="alert alert-info mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="bi bi-stars me-2"></i>需要更多专业工具支持？</h4>
+                        <p class="mb-0">我们可以为学生提供定制化的编程学习环境和工具配置服务，联系我们了解更多！</p>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="bi bi-envelope me-2"></i>联系我们
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚与首页一致 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关于我们</h5>
+                        <ul class="footer-links">
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="faq.html">常见问题</a></li>
+                            <li><a href="feedback.html">意见反馈</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>学习资源</h5>
+                        <ul class="footer-links">
+                            <li><a href="courses.html">课程中心</a></li>
+                            <li><a href="#">学习路径</a></li>
+                            <li><a href="http://oj.1024code.top">专属平台</a></li>
+                            <li><a href="tools.html">编程工具</a></li>
+                            <li><a href="https://blog.y-liberty.cn">学习社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>赛事中心</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">NOI信息学奥赛</a></li>
+                            <li><a href="#">CSP认证考试</a></li>
+                            <li><a href="#">蓝桥杯大赛</a></li>
+                            <li><a href="#">USACO美国奥赛</a></li>
+                            <li><a href="#">APIO亚太奥赛</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关注我们</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="bi bi-wechat"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-tencent-qq"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-sina-weibo"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                        <div class="qrcode-container mt-3">
+                            <img src="assets/images/qrcode.png" alt="关注我们的微信公众号" class="qrcode">
+                            <p class="qrcode-text">扫码关注公众号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="partner-links">
+                            <h5>友情链接</h5>
+                            <div class="partner-list">
+                                <a href="#">中国信息学奥林匹克</a>
+                                <a href="#">全国青少年信息学奥赛</a>
+                                <a href="#">蓝桥杯大赛</a>
+                                <a href="#">CodeForces</a>
+                                <a href="#">USACO</a>
+                                <a href="#">LeetCode</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">©2020-2024 编程教育平台 版权所有</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="legal-links">
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">用户协议</a></li>
+                            <li><a href="#">版权声明</a></li>
+                            <li><a href="#">免责声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p class="icp">粤ICP备XXXXXXXX号-X | 粤公网安备XXXXXXXXXXXXX号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

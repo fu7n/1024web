@@ -1,0 +1,342 @@
+/* 页面头部美化 */
+.project-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px 0 30px;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.header-content {
+    position: relative;
+    z-index: 10;
+}
+
+.title-wrapper {
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-shadow: none;
+    position: relative;
+}
+
+.main-title i {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+.title-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 10px 0 0;
+    font-weight: 300;
+    max-width: 500px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* 装饰元素 */
+.header-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.decoration-item {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+    color: white;
+}
+
+.decoration-item.d1 {
+    top: 20%;
+    right: 5%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.decoration-item.d2 {
+    bottom: 15%;
+    right: 20%;
+    font-size: 1.5rem;
+    animation: float 6s ease-in-out infinite 1s;
+}
+
+.decoration-item.d3 {
+    top: 40%;
+    right: 30%;
+    font-size: 2.2rem;
+    animation: float 7s ease-in-out infinite 0.5s;
+}
+
+.decoration-item.d4 {
+    bottom: 20%;
+    left: 10%;
+    font-size: 1.8rem;
+    animation: float 9s ease-in-out infinite 1.5s;
+}
+
+.decoration-item.d5 {
+    top: 30%;
+    left: 20%;
+    animation: float 8s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .project-header {
+        padding: 30px 0 20px;
+    }
+    
+    .main-title {
+        font-size: 1.7rem;
+    }
+    
+    .title-description {
+        font-size: 0.95rem;
+    }
+    
+    .back-btn {
+        margin-top: 10px;
+    }
+    
+    .decoration-item {
+        font-size: 1.5rem;
+    }
+}
+
+/* 筛选工具栏美化 - 简约风格 */
+.filter-toolbar {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* 分类筛选按钮美化 */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: #f0f2f5;
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 搜索框美化 */
+.search-box {
+    position: relative;
+    min-width: 220px;
+}
+
+.search-box input {
+    padding: 9px 15px;
+    padding-right: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    background-color: white;
+    font-size: 0.95rem;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: all 0.2s ease;
+}
+
+.search-box input:focus + i {
+    color: var(--primary-color);
+}
+
+/* 排序选择框美化 */
+.sort-options select {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 9px 15px;
+    padding-right: 35px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.2s ease;
+    min-width: 140px;
+    background-position: right 10px center;
+}
+
+.sort-options select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .category-filter {
+        margin-bottom: 15px;
+    }
+    
+    .search-box {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .sort-options select {
+        min-width: 100%;
+    }
+}
+
+/* 设置项目卡片内容区域背景为白色 */
+.project-content {
+    background-color: #ffffff !important;
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 项目卡片标题区域 */
+.project-content .project-header {
+    background-color: #ffffff !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    overflow: visible;
+    color: inherit;
+}
+
+/* 项目标题背景设置为白色 */
+.project-content .project-header h4 {
+    background-color: #ffffff !important; /* 使用白色背景并强制覆盖 */
+    padding: 0;
+    border-radius: 0;
+    border-left: none;
+    box-shadow: none;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.project-content .project-header h4:hover {
+    background-color: #ffffff !important; /* 悬停时也保持白色背景 */
+    transform: none;
+}
+
+/* 确保项目描述和元数据区域也是白色背景 */
+.project-description, 
+.project-meta, 
+.project-actions {
+    background-color: #ffffff !important;
+}
+
+/* 删除所有类别项目标题的自定义背景色，统一设置为白色 */
+[data-category="game"] .project-content .project-header h4,
+[data-category="animation"] .project-content .project-header h4,
+[data-category="story"] .project-content .project-header h4,
+[data-category="education"] .project-content .project-header h4 {
+    background-color: #ffffff !important;
+    border-left: none;
+}
+
+/* 确保卡片整体使用白色背景 */
+.featured-project-card {
+    background: #ffffff !important;
+} 

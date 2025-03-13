@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 壹零贰肆少儿编程</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 修改后的导航栏 -->
+    <nav class="navbar navbar-expand-lg inner-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">1024少儿编程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door me-2"></i>首页
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-journal-code me-2"></i>课程体系
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="scratch.html">
+                                <i class="bi bi-puzzle me-2"></i>Scratch启蒙
+                            </a></li>
+                            <li><a class="dropdown-item" href="python.html">
+                                <i class="bi bi-code-square me-2"></i>Python进阶
+                            </a></li>
+                            <li><a class="dropdown-item" href="cpp.html">
+                                <i class="bi bi-cpu me-2"></i>C++竞赛
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">
+                                <i class="bi bi-list-stars me-2"></i>全部课程
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-people me-2"></i>关于我们
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="about.html">
+                                <i class="bi bi-building me-2"></i>机构介绍
+                            </a></li>
+                            <li><a class="dropdown-item" href="competitions.html">
+                                <i class="bi bi-trophy me-2"></i>赛事活动
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-question-circle me-2"></i>帮助与支持
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="faq.html">
+                                <i class="bi bi-patch-question me-2"></i>常见问题
+                            </a></li>
+                            <li><a class="dropdown-item" href="feedback.html">
+                                <i class="bi bi-chat-left-text me-2"></i>意见反馈
+                            </a></li>
+                            <li><a class="dropdown-item" href="tools.html">
+                                <i class="bi bi-tools me-2"></i>编程工具
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- 联系表单 -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>预约试听</h3>
+                        <form id="bookForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="学生姓名" required>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="联系电话" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select" required>
+                                        <option value="">选择课程</option>
+                                        <option>Scratch启蒙</option>
+                                        <option>Python基础</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">提交预约</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>校区地址</h3>
+                        <div class="map-container mt-4">
+                            <!-- 地图嵌入代码 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚与首页一致 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关于我们</h5>
+                        <ul class="footer-links">
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="faq.html">常见问题</a></li>
+                            <li><a href="feedback.html">意见反馈</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>学习资源</h5>
+                        <ul class="footer-links">
+                            <li><a href="courses.html">课程中心</a></li>
+                            <li><a href="#">学习路径</a></li>
+                            <li><a href="http://oj.1024code.top">专属平台</a></li>
+                            <li><a href="tools.html">编程工具</a></li>
+                            <li><a href="https://blog.y-liberty.cn">学习社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>赛事中心</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">NOI信息学奥赛</a></li>
+                            <li><a href="#">CSP认证考试</a></li>
+                            <li><a href="#">蓝桥杯大赛</a></li>
+                            <li><a href="#">USACO美国奥赛</a></li>
+                            <li><a href="#">APIO亚太奥赛</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关注我们</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="bi bi-wechat"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-tencent-qq"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-sina-weibo"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                        <div class="qrcode-container mt-3">
+                            <img src="assets/images/qrcode.png" alt="关注我们的微信公众号" class="qrcode">
+                            <p class="qrcode-text">扫码关注公众号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="partner-links">
+                            <h5>友情链接</h5>
+                            <div class="partner-list">
+                                <a href="#">中国信息学奥林匹克</a>
+                                <a href="#">全国青少年信息学奥赛</a>
+                                <a href="#">蓝桥杯大赛</a>
+                                <a href="#">CodeForces</a>
+                                <a href="#">USACO</a>
+                                <a href="#">LeetCode</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">©2020-2024 编程教育平台 版权所有</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="legal-links">
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">用户协议</a></li>
+                            <li><a href="#">版权声明</a></li>
+                            <li><a href="#">免责声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p class="icp">粤ICP备XXXXXXXX号-X | 粤公网安备XXXXXXXXXXXXX号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

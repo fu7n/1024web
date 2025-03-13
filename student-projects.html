@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生优秀作品展示 - Scratch编程课程</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/student-projects.css">
+</head>
+<body>
+    <!-- 页面头部 - 美化版本 -->
+    <header class="projects-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="title-wrapper">
+                            <h1 class="main-title">
+                                <i class="bi bi-trophy-fill me-2"></i>
+                                学生优秀作品展示
+                            </h1>
+                            <p class="title-description">展示我们学生在Scratch编程课程中创作的精彩项目，见证孩子们的创造力与编程能力</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="scratch.html" class="back-btn">
+                            <i class="bi bi-arrow-left"></i> 返回课程页面
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="header-decoration">
+                    <div class="decoration-item d1"><i class="bi bi-code-slash"></i></div>
+                    <div class="decoration-item d2"><i class="bi bi-award"></i></div>
+                    <div class="decoration-item d3"><i class="bi bi-lightbulb"></i></div>
+                    <div class="decoration-item d4"><i class="bi bi-cpu"></i></div>
+                    <div class="decoration-item d5"><i class="bi bi-rocket"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 筛选工具栏 - 美化版本 -->
+    <div class="filter-toolbar mt-4 mb-4">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="category-filter">
+                        <button class="filter-btn active" data-filter="all">全部作品</button>
+                        <button class="filter-btn" data-filter="game">游戏</button>
+                        <button class="filter-btn" data-filter="animation">动画</button>
+                        <button class="filter-btn" data-filter="story">互动故事</button>
+                        <button class="filter-btn" data-filter="simulation">模拟</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex gap-3 justify-content-lg-end">
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="搜索作品...">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <div class="sort-options">
+                            <select class="form-select">
+                                <option value="latest" selected>最新作品</option>
+                                <option value="popular">最受欢迎</option>
+                                <option value="top-rated">评分最高</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品展示区 -->
+    <div class="projects-showcase">
+        <div class="container">
+            <div class="row g-4">
+                <!-- 作品1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-category="game">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">游戏</span>
+                            <span class="project-tag">迷宫</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.8</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project1.jpg" alt="迷宫冒险" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>迷宫冒险</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小明 <span class="student-age">8岁</span>
+                                </div>
+                                <div class="student-class">三年级 · 启蒙班</div>
+                            </div>
+                            <p class="project-description">一个充满挑战的迷宫游戏，玩家需要收集金币并找到出口，途中还要避开各种陷阱和敌人。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2023.12.15</span>
+                                <span><i class="bi bi-heart-fill"></i> 245</span>
+                                <span><i class="bi bi-eye-fill"></i> 1.2k</span>
+                                <span><i class="bi bi-chat-fill"></i> 32</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal1"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="animation">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">动画</span>
+                            <span class="project-tag">海洋</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.6</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project2.jpg" alt="海底世界" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>海底世界</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小红 <span class="student-age">7岁</span>
+                                </div>
+                                <div class="student-class">二年级 · 启蒙班</div>
+                            </div>
+                            <p class="project-description">一个生动的海底世界互动动画，展示了丰富多彩的海洋生物，用户可以与各种海洋生物互动。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2023.11.20</span>
+                                <span><i class="bi bi-heart-fill"></i> 189</span>
+                                <span><i class="bi bi-eye-fill"></i> 876</span>
+                                <span><i class="bi bi-chat-fill"></i> 24</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal2"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal2"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="game">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">游戏</span>
+                            <span class="project-tag">太空</span>
+                        </div>
+                        <div class="project-ribbon">推荐</div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.9</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project3.jpg" alt="太空探险" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>太空探险</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小华 <span class="student-age">8岁</span>
+                                </div>
+                                <div class="student-class">三年级 · 进阶班</div>
+                            </div>
+                            <p class="project-description">一个太空探险游戏，玩家需要驾驶飞船收集星星并避开陨石，还有多个关卡和特殊能力。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2024.01.05</span>
+                                <span><i class="bi bi-heart-fill"></i> 312</span>
+                                <span><i class="bi bi-eye-fill"></i> 1.5k</span>
+                                <span><i class="bi bi-chat-fill"></i> 45</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal3"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal3"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="story">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">互动故事</span>
+                            <span class="project-tag">冒险</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.7</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project4.jpg" alt="森林冒险" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>森林冒险</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小丽 <span class="student-age">9岁</span>
+                                </div>
+                                <div class="student-class">四年级 · 进阶班</div>
+                            </div>
+                            <p class="project-description">一个互动故事游戏，玩家需要在魔法森林中做出选择，每个选择都会影响故事的发展和结局。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2023.12.28</span>
+                                <span><i class="bi bi-heart-fill"></i> 278</span>
+                                <span><i class="bi bi-eye-fill"></i> 1.3k</span>
+                                <span><i class="bi bi-chat-fill"></i> 36</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal4"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal4"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="simulation">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">模拟</span>
+                            <span class="project-tag">物理</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.5</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project5.jpg" alt="弹球物理" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>弹球物理</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小强 <span class="student-age">10岁</span>
+                                </div>
+                                <div class="student-class">五年级 · 高级班</div>
+                            </div>
+                            <p class="project-description">一个物理模拟项目，展示了重力、弹性碰撞和摩擦力等物理概念，用户可以调整各种参数观察效果。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2024.01.15</span>
+                                <span><i class="bi bi-heart-fill"></i> 203</span>
+                                <span><i class="bi bi-eye-fill"></i> 950</span>
+                                <span><i class="bi bi-chat-fill"></i> 28</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal5"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal5"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-category="animation">
+                    <div class="project-card enhanced">
+                        <div class="project-tags">
+                            <span class="project-tag">动画</span>
+                            <span class="project-tag">音乐</span>
+                        </div>
+                        <div class="project-rating">
+                            <span class="rating-value">4.8</span>
+                            <div class="rating-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="assets/images/scratch-project6.jpg" alt="音乐可视化" class="img-fluid">
+                            <div class="project-overlay">
+                                <button class="btn btn-light play-video-btn" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                                    <i class="bi bi-play-circle-fill"></i> 观看演示
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>音乐可视化</h4>
+                            <div class="student-info">
+                                <div class="student-name">
+                                    <i class="bi bi-person-circle"></i> 小雨 <span class="student-age">9岁</span>
+                                </div>
+                                <div class="student-class">四年级 · 创意班</div>
+                            </div>
+                            <p class="project-description">一个音乐可视化项目，能够根据音乐的节奏和音量生成动态的视觉效果，展示了声音与图像的结合。</p>
+                            <div class="project-meta">
+                                <span><i class="bi bi-calendar3"></i> 2024.01.20</span>
+                                <span><i class="bi bi-heart-fill"></i> 267</span>
+                                <span><i class="bi bi-eye-fill"></i> 1.1k</span>
+                                <span><i class="bi bi-chat-fill"></i> 39</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#codeModal6"><i class="bi bi-code-slash"></i> 查看代码</a>
+                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal6"><i class="bi bi-play-fill"></i> 运行项目</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分页 -->
+            <div class="pagination-container">
+                <nav aria-label="作品分页">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目视频模态框 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel1">迷宫冒险 - 小明 (8岁)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="迷宫冒险演示" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-modal-info p-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5>项目描述</h5>
+                                <p>这个迷宫冒险游戏是小明在学习Scratch三个月后完成的作品。游戏中，玩家需要控制角色穿越迷宫，收集金币并找到出口。游戏包含多个关卡，难度逐渐增加，展示了条件判断、变量使用和碰撞检测等编程概念。</p>
+                                <h5>使用的编程概念</h5>
+                                <div class="concept-tags">
+                                    <span class="concept-tag">条件判断</span>
+                                    <span class="concept-tag">变量</span>
+                                    <span class="concept-tag">循环</span>
+                                    <span class="concept-tag">事件</span>
+                                    <span class="concept-tag">碰撞检测</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="student-achievement">
+                                    <h5>学习成就</h5>
+                                    <ul class="achievement-list">
+                                        <li><i class="bi bi-trophy-fill"></i> 校内Scratch比赛一等奖</li>
+                                        <li><i class="bi bi-award-fill"></i> 完成初级认证</li>
+                                        <li><i class="bi bi-lightning-fill"></i> 连续学习12周</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-code-slash me-2"></i>查看代码</a>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-play-fill me-2"></i>运行项目</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 其他模态框（2-6）可以根据需要添加 -->
+
+    <!-- 返回顶部按钮 -->
+    <button class="scroll-top-btn">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- 代码查看模态框 -->
+    <div class="modal fade" id="codeModal1" tabindex="-1" aria-labelledby="codeModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="codeModalLabel1">迷宫冒险 - 代码查看</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="codeTab1" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="player-tab-1" data-bs-toggle="tab" data-bs-target="#player-1" type="button" role="tab" aria-controls="player-1" aria-selected="true">角色代码</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="maze-tab-1" data-bs-toggle="tab" data-bs-target="#maze-1" type="button" role="tab" aria-controls="maze-1" aria-selected="false">迷宫代码</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="collision-tab-1" data-bs-toggle="tab" data-bs-target="#collision-1" type="button" role="tab" aria-controls="collision-1" aria-selected="false">碰撞检测</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="codeTabContent1">
+                        <div class="tab-pane fade show active" id="player-1" role="tabpanel" aria-labelledby="player-tab-1">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/player-code.jpg" alt="角色代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>角色控制代码主要负责：</p>
+                                <ul>
+                                    <li>使用方向键控制角色移动</li>
+                                    <li>切换角色的不同动画状态</li>
+                                    <li>收集金币并更新分数</li>
+                                    <li>检测到达终点的条件</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="maze-1" role="tabpanel" aria-labelledby="maze-tab-1">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/maze-code.jpg" alt="迷宫代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>迷宫生成和管理代码主要负责：</p>
+                                <ul>
+                                    <li>初始化迷宫布局</li>
+                                    <li>设置墙壁边界的碰撞逻辑</li>
+                                    <li>放置金币和其他可收集物品</li>
+                                    <li>设置关卡进度和难度</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="collision-1" role="tabpanel" aria-labelledby="collision-tab-1">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/collision-code.jpg" alt="碰撞检测代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>碰撞检测代码主要负责：</p>
+                                <ul>
+                                    <li>检测与墙壁的碰撞</li>
+                                    <li>检测与金币的碰撞并处理收集逻辑</li>
+                                    <li>检测与陷阱的碰撞并减少生命值</li>
+                                    <li>检测到达终点的条件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1" data-bs-dismiss="modal">
+                        <i class="bi bi-play-fill me-2"></i>运行项目
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="codeModal2" tabindex="-1" aria-labelledby="codeModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="codeModalLabel2">海底世界 - 代码查看</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="codeTab2" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="fish-tab-2" data-bs-toggle="tab" data-bs-target="#fish-2" type="button" role="tab" aria-controls="fish-2" aria-selected="true">鱼群行为</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ocean-tab-2" data-bs-toggle="tab" data-bs-target="#ocean-2" type="button" role="tab" aria-controls="ocean-2" aria-selected="false">海洋背景</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="interaction-tab-2" data-bs-toggle="tab" data-bs-target="#interaction-2" type="button" role="tab" aria-controls="interaction-2" aria-selected="false">互动效果</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="codeTabContent2">
+                        <div class="tab-pane fade show active" id="fish-2" role="tabpanel" aria-labelledby="fish-tab-2">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/fish-code.jpg" alt="鱼群行为代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>鱼群行为代码主要负责：</p>
+                                <ul>
+                                    <li>创建多样化的鱼类并控制其游动模式</li>
+                                    <li>设置鱼群的集体行为和分散行为</li>
+                                    <li>随机生成不同种类和大小的鱼</li>
+                                    <li>当鱼游出屏幕边缘时的重生逻辑</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ocean-2" role="tabpanel" aria-labelledby="ocean-tab-2">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/ocean-code.jpg" alt="海洋背景代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>海洋背景代码主要负责：</p>
+                                <ul>
+                                    <li>创建水波纹动画效果</li>
+                                    <li>控制海底植物的摇摆动画</li>
+                                    <li>生成气泡上升的效果</li>
+                                    <li>调整光线变化和水下光影效果</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="interaction-2" role="tabpanel" aria-labelledby="interaction-tab-2">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/interaction-code.jpg" alt="互动效果代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>互动效果代码主要负责：</p>
+                                <ul>
+                                    <li>鼠标与海洋生物的互动逻辑</li>
+                                    <li>点击特定区域触发的事件</li>
+                                    <li>海洋生物对用户操作的反应</li>
+                                    <li>音效和视觉反馈的处理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal2" data-bs-dismiss="modal">
+                        <i class="bi bi-play-fill me-2"></i>运行项目
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框3 - 太空探险 -->
+    <div class="modal fade" id="codeModal3" tabindex="-1" aria-labelledby="codeModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="codeModalLabel3">太空探险 - 代码查看</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="codeTab3" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="spaceship-tab-3" data-bs-toggle="tab" data-bs-target="#spaceship-3" type="button" role="tab" aria-controls="spaceship-3" aria-selected="true">飞船控制</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="asteroids-tab-3" data-bs-toggle="tab" data-bs-target="#asteroids-3" type="button" role="tab" aria-controls="asteroids-3" aria-selected="false">陨石生成</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="space-bg-tab-3" data-bs-toggle="tab" data-bs-target="#space-bg-3" type="button" role="tab" aria-controls="space-bg-3" aria-selected="false">太空背景</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="codeTabContent3">
+                        <div class="tab-pane fade show active" id="spaceship-3" role="tabpanel" aria-labelledby="spaceship-tab-3">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/spaceship-code.jpg" alt="飞船控制代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>飞船控制代码主要负责：</p>
+                                <ul>
+                                    <li>处理飞船的移动和旋转控制</li>
+                                    <li>管理飞船的能量和生命值</li>
+                                    <li>实现飞船的加速和制动功能</li>
+                                    <li>处理碰撞和伤害逻辑</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="asteroids-3" role="tabpanel" aria-labelledby="asteroids-tab-3">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/asteroids-code.jpg" alt="陨石生成代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>陨石生成代码主要负责：</p>
+                                <ul>
+                                    <li>随机生成不同大小和形状的陨石</li>
+                                    <li>控制陨石的移动轨迹和旋转效果</li>
+                                    <li>根据游戏难度调整陨石的数量和速度</li>
+                                    <li>处理陨石之间的碰撞和分裂效果</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="space-bg-3" role="tabpanel" aria-labelledby="space-bg-tab-3">
+                            <div class="code-image">
+                                <img src="assets/images/scratch-code/space-bg-code.jpg" alt="太空背景代码" class="img-fluid rounded">
+                            </div>
+                            <div class="code-explanation mt-3">
+                                <h6>代码说明：</h6>
+                                <p>太空背景代码主要负责：</p>
+                                <ul>
+                                    <li>生成星空背景和视差滚动效果</li>
+                                    <li>创建星云和星团的动态效果</li>
+                                    <li>管理关卡切换和场景变化</li>
+                                    <li>实现背景音乐和音效管理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal3" data-bs-dismiss="modal">
+                        <i class="bi bi-play-fill me-2"></i>运行项目
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 可以继续添加其他项目的代码模态框 (4-6) -->
+    
+    <!-- CSS样式 - 添加到样式表中或内联添加 -->
+    <style>
+        /* 代码查看模态框样式 */
+        .code-image {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .code-explanation {
+            color: #495057;
+        }
+        
+        .concept-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 0 5px 5px 0;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+        
+        .nav-tabs .nav-link {
+            color: #495057;
+            font-weight: 500;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .achievement-list {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .achievement-list i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+    </style>
+
+    <!-- JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- 立即修复模态框问题的内联脚本 -->
+    <script>
+        // 立即执行函数修复模态框问题
+        (function() {
+            // 添加必要的样式
+            const styleEl = document.createElement('style');
+            styleEl.textContent = `
+                /* 完全移除modal-backdrop */
+                .modal-backdrop {
+                    display: none !important;
+                    opacity: 0 !important;
+                    background: none !important;
+                    pointer-events: none !important;
+                }
+                
+                /* 提高模态框的层级 */
+                .modal {
+                    z-index: 9060 !important;
+                    background: none !important;
+                }
+                
+                .modal-content {
+                    z-index: 9061 !important;
+                    position: relative;
+                    background-color: #fff !important;
+                    border: 1px solid rgba(0,0,0,.2) !important;
+                    border-radius: 0.3rem !important;
+                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.5) !important;
+                    pointer-events: auto !important;
+                }
+                
+                .modal-dialog {
+                    z-index: 9061 !important;
+                    position: relative;
+                    pointer-events: auto !important;
+                }
+                
+                /* 确保模态框内所有元素可交互 */
+                .modal * {
+                    pointer-events: auto !important;
+                }
+                
+                /* 禁用所有粒子背景的事件捕获 */
+                #particles-js, 
+                canvas.particles-js-canvas-el {
+                    pointer-events: none !important;
+                }
+            `;
+            document.head.appendChild(styleEl);
+            
+            // 移除所有现有的modal-backdrop
+            function removeAllBackdrops() {
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(function(backdrop) {
+                    backdrop.remove();
+                });
+            }
+            
+            // 页面加载完成后执行
+            window.addEventListener('DOMContentLoaded', function() {
+                // 禁用粒子背景的事件捕获
+                const particlesEl = document.getElementById('particles-js');
+                if (particlesEl) {
+                    particlesEl.style.pointerEvents = 'none';
+                }
+                
+                // 移除所有backdrop
+                removeAllBackdrops();
+                
+                // 监听模态框打开事件
+                document.querySelectorAll('.modal').forEach(function(modal) {
+                    modal.addEventListener('show.bs.modal', function() {
+                        // 确保模态框在最上层
+                        this.style.zIndex = '9060';
+                        
+                        // 移除所有backdrop
+                        setTimeout(removeAllBackdrops, 10);
+                    });
+                    
+                    // 模态框显示后再次检查
+                    modal.addEventListener('shown.bs.modal', function() {
+                        removeAllBackdrops();
+                    });
+                });
+            });
+            
+            // 修复模态框关闭后的问题
+            document.addEventListener('hidden.bs.modal', function() {
+                removeAllBackdrops();
+                
+                // 修复body样式
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+            }, true);
+            
+            // 定期检查并移除可能出现的backdrop
+            setInterval(removeAllBackdrops, 500);
+        })();
+    </script>
+    
+    <!-- 添加额外的修复脚本 -->
+    <script>
+        // 确保Bootstrap正确加载
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查Bootstrap是否已加载
+            if (typeof bootstrap === 'undefined') {
+                console.error('Bootstrap未正确加载，尝试重新加载...');
+                // 重新加载Bootstrap
+                const script = document.createElement('script');
+                script.src = 'https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js';
+                script.onload = function() {
+                    console.log('Bootstrap已重新加载');
+                    // 移除所有backdrop
+                    document.querySelectorAll('.modal-backdrop').forEach(function(backdrop) {
+                        backdrop.remove();
+                    });
+                };
+                document.head.appendChild(script);
+            } else {
+                console.log('Bootstrap已正确加载');
+                // 移除所有backdrop
+                document.querySelectorAll('.modal-backdrop').forEach(function(backdrop) {
+                    backdrop.remove();
+                });
+            }
+        });
+        
+        // 监听模态框事件
+        document.addEventListener('shown.bs.modal', function() {
+            // 模态框显示后，移除所有backdrop
+            document.querySelectorAll('.modal-backdrop').forEach(function(backdrop) {
+                backdrop.remove();
+            });
+        });
+    </script>
+    
+    <script>
+        // 初始化AOS动画
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // 筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.btn-filter');
+            const projectCards = document.querySelectorAll('[data-category]');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的active类
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // 给当前点击的按钮添加active类
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 返回顶部按钮
+            const scrollTopBtn = document.querySelector('.scroll-top-btn');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

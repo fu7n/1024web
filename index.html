@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹零贰肆少儿编程 - 开启未来创造力</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <!-- 添加Lightbox2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+<body>
+    <!-- 在body开始处添加导航栏 -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">1024少儿编程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door me-2"></i>首页
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-journal-code me-2"></i>课程体系
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="scratch.html">
+                                <i class="bi bi-puzzle me-2"></i>Scratch启蒙
+                            </a></li>
+                            <li><a class="dropdown-item" href="python.html">
+                                <i class="bi bi-code-square me-2"></i>Python进阶
+                            </a></li>
+                            <li><a class="dropdown-item" href="cpp.html">
+                                <i class="bi bi-cpu me-2"></i>C++竞赛
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">
+                                <i class="bi bi-list-stars me-2"></i>全部课程
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-people me-2"></i>关于我们
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-question-circle me-2"></i>帮助与支持
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="faq.html">
+                                <i class="bi bi-patch-question me-2"></i>常见问题
+                            </a></li>
+                            <li><a class="dropdown-item" href="feedback.html">
+                                <i class="bi bi-chat-left-text me-2"></i>意见反馈
+                            </a></li>
+                            <li><a class="dropdown-item" href="tools.html">
+                                <i class="bi bi-tools me-2"></i>编程工具
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 在导航栏后立即添加轮播图 -->
+    <div class="main-carousel">
+        <div id="topCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/banners/home-banner-1.jpg" class="d-block w-100" alt="创意编程">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">开启编程之旅</h2>
+                        <p class="lead">从零开始构建你的第一个程序</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/banners/home-banner-2.jpg" class="d-block w-100" alt="竞赛课程">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">算法竞赛培训</h2>
+                        <p class="lead">NOI金牌教练团队指导</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#topCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#topCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 添加间隔元素保证内容滚动 -->
+    <div class="carousel-spacer"></div>
+
+            <!-- 修改后的英雄区域 
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="mb-4">
+                少儿编程教育
+            </h1>
+            <div class="lead mb-4">
+                <span class="typed-text">
+                    开启未来科技之门<br class="d-none d-md-block"> 
+                    <span class="text-muted">—— 专业编程教育机构 ——</span><br>
+                    培养21世纪核心技能
+                </span>
+            </div>
+            <a href="contact.html" class="btn btn-accent btn-lg" role="button">
+                <i class="bi bi-rocket-takeoff me-2"></i>
+                立即体验
+            </a>
+        </div>
+    </section>
+-->
+
+    <!-- 课程体系 -->
+    <section id="courses" class="py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="mb-3">精品课程体系</h2>
+                <p class="lead text-muted mb-5">科学规划学习路径，从入门到精通的全方位编程教育</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="card-badge">入门</div>
+                        <img src="assets/images/courses/scratch-course.jpg" class="card-img-top" alt="Scratch图形化编程">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Scratch图形化编程</h5>
+                                <span class="badge bg-primary rounded-pill">6-8岁</span>
+                            </div>
+                            <p class="card-text">通过Scratch培养编程思维，完成趣味游戏和动画创作。零基础入门，培养逻辑思维和创造力。</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>拖拽式编程入门</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>游戏与动画创作</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>逻辑思维培养</li>
+                            </ul>
+                            <div class="text-end mt-3">
+                                <a href="scratch.html" class="btn btn-sm btn-outline-primary">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="card-badge">热门</div>
+                        <img src="assets/images/courses/python-course.jpg" class="card-img-top" alt="Python编程">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Python人工智能</h5>
+                                <span class="badge bg-success rounded-pill">9-12岁</span>
+                            </div>
+                            <p class="card-text">掌握Python编程基础，探索人工智能和数据分析领域，开发实用程序和智能应用。</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Python基础语法</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>数据分析入门</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>AI模型训练</li>
+                            </ul>
+                            <div class="text-end mt-3">
+                                <a href="python.html" class="btn btn-sm btn-outline-success">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="card-badge">进阶</div>
+                        <img src="assets/images/courses/cpp-course.jpg" class="card-img-top" alt="C++算法">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">C++算法竞赛</h5>
+                                <span class="badge bg-warning rounded-pill">13-16岁</span>
+                            </div>
+                            <p class="card-text">深入学习C++编程语言和算法设计，为参加信息学奥赛(NOI/NOIP)做专业准备。</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>数据结构与算法</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>竞赛题目训练</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>NOI/NOIP备赛</li>
+                            </ul>
+                            <div class="text-end mt-3">
+                                <a href="cpp.html" class="btn btn-sm btn-outline-warning">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-accent">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>查看全部课程
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 新增特色课程展示 -->
+    <section class="featured-courses py-6">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="mb-3">为什么选择我们</h2>
+                <p class="lead text-muted mb-5">专业团队打造高品质编程教育，培养孩子的未来核心竞争力</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <span class="feature-number">01</span>
+                        <div class="icon-wrapper bg-primary">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>阶梯式成长体系</h4>
+                            <p>从Scratch图形化编程入门，到Python应用开发，再到C++算法竞赛，根据孩子年龄和认知特点，设计循序渐进的课程内容。</p>
+                            <a href="about.html" class="feature-link">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <span class="feature-number">02</span>
+                        <div class="icon-wrapper bg-success">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>独立训练平台</h4>
+                            <p>我们给学生提供独立的训练平台，让学生可以随时随地进行编程练习，培养孩子的自学能力。</p>
+                            <a href="http://oj.1024code.top/" class="feature-link">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <span class="feature-number">03</span>
+                        <div class="icon-wrapper bg-warning">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>专属课后博客</h4>
+                            <p>我们坚持课上讲解，课后博客，让孩子在课上掌握知识，在课后巩固知识，培养孩子的自学能力。</p>
+                            <a href="https://blog.y-liberty.cn/" class="feature-link">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration-dots"></div>
+            <div class="decoration-dots dot-1"></div>
+            <div class="decoration-dots dot-2"></div>
+        </div>
+    </section>
+
+
+    <!-- 学员作品 -->
+    <section class="student-works py-6">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="mb-3">学员作品展示</h2>
+                <p class="lead text-muted mb-5">孩子们的创意与才华，在这里绽放光彩</p>
+            </div>
+            <div class="row g-4 gallery-grid">
+                <div class="col-md-3 col-sm-6">
+                    <div class="work-item">
+                        <a href="assets/images/gallery/1.jpg" data-lightbox="gallery" class="work-link">
+                            <div class="work-overlay">
+                                <div class="work-info">
+                                    <h5>太空冒险游戏</h5>
+                                    <p>Scratch作品 | 8岁学员</p>
+                                </div>
+                            </div>
+                            <img src="assets/images/gallery/thumb-1.jpg" class="img-fluid" alt="太空冒险游戏">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="work-item">
+                        <a href="assets/images/gallery/2.jpg" data-lightbox="gallery" class="work-link">
+                            <div class="work-overlay">
+                                <div class="work-info">
+                                    <h5>智能聊天机器人</h5>
+                                    <p>Python作品 | 11岁学员</p>
+                                </div>
+                            </div>
+                            <img src="assets/images/gallery/thumb-1.jpg" class="img-fluid" alt="智能聊天机器人">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="work-item">
+                        <a href="assets/images/gallery/3.jpg" data-lightbox="gallery" class="work-link">
+                            <div class="work-overlay">
+                                <div class="work-info">
+                                    <h5>数据可视化项目</h5>
+                                    <p>Python作品 | 12岁学员</p>
+                                </div>
+                            </div>
+                            <img src="assets/images/gallery/thumb-1.jpg" class="img-fluid" alt="数据可视化项目">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="work-item">
+                        <a href="assets/images/gallery/4.jpg" data-lightbox="gallery" class="work-link">
+                            <div class="work-overlay">
+                                <div class="work-info">
+                                    <h5>算法可视化工具</h5>
+                                    <p>C++作品 | 15岁学员</p>
+                                </div>
+                            </div>
+                            <img src="assets/images/gallery/thumb-1.jpg" class="img-fluid" alt="算法可视化工具">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="gallery.html" class="btn btn-outline-light">查看更多作品</a>
+            </div>
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+        </div>
+    </section>
+
+    <!-- 学生获奖战绩展示 -->
+    <section class="awards-showcase py-6">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="mb-3">学生获奖战绩</h2>
+                <p class="lead text-muted mb-5">我们的学生在各类编程竞赛中屡创佳绩</p>
+            </div>
+            
+            <div class="awards-flow-container">
+                <div class="awards-flow">
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>NOI全国金牌</h4>
+                            <p>张同学 | 15岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert1.jpg" data-lightbox="certificates" data-title="NOI全国金牌 - 张同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert1.jpg" alt="NOI全国金牌证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>NOIP提高组一等奖</h4>
+                            <p>李同学 | 14岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert2.jpg" data-lightbox="certificates" data-title="NOIP提高组一等奖 - 李同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert2.jpg" alt="NOIP提高组一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>蓝桥杯全国总决赛一等奖</h4>
+                            <p>王同学 | 16岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert3.jpg" data-lightbox="certificates" data-title="蓝桥杯全国总决赛一等奖 - 王同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert3.jpg" alt="蓝桥杯全国总决赛一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>USACO铂金级</h4>
+                            <p>赵同学 | 15岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert4.jpg" data-lightbox="certificates" data-title="USACO铂金级 - 赵同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert4.jpg" alt="USACO铂金级证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>CSP-J提高组一等奖</h4>
+                            <p>刘同学 | 13岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert5.jpg" data-lightbox="certificates" data-title="CSP-J提高组一等奖 - 刘同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert5.jpg" alt="CSP-J提高组一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>全国青少年信息学奥林匹克联赛一等奖</h4>
+                            <p>陈同学 | 16岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert6.jpg" data-lightbox="certificates" data-title="全国青少年信息学奥林匹克联赛一等奖 - 陈同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert6.jpg" alt="全国青少年信息学奥林匹克联赛一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>Codeforces Master级别</h4>
+                            <p>杨同学 | 17岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert7.jpg" data-lightbox="certificates" data-title="Codeforces Master级别 - 杨同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert7.jpg" alt="Codeforces Master级别证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>APIO亚太信息学奥赛铜牌</h4>
+                            <p>周同学 | 16岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert8.jpg" data-lightbox="certificates" data-title="APIO亚太信息学奥赛铜牌 - 周同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert8.jpg" alt="APIO亚太信息学奥赛铜牌证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 复制一份用于无缝滚动 -->
+                <div class="awards-flow">
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>NOI全国金牌</h4>
+                            <p>张同学 | 15岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert1.jpg" data-lightbox="certificates" data-title="NOI全国金牌 - 张同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert1.jpg" alt="NOI全国金牌证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>NOIP提高组一等奖</h4>
+                            <p>李同学 | 14岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert2.jpg" data-lightbox="certificates" data-title="NOIP提高组一等奖 - 李同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert2.jpg" alt="NOIP提高组一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>蓝桥杯全国总决赛一等奖</h4>
+                            <p>王同学 | 16岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert3.jpg" data-lightbox="certificates" data-title="蓝桥杯全国总决赛一等奖 - 王同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert3.jpg" alt="蓝桥杯全国总决赛一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>USACO铂金级</h4>
+                            <p>赵同学 | 15岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert4.jpg" data-lightbox="certificates" data-title="USACO铂金级 - 赵同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert4.jpg" alt="USACO铂金级证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>CSP-J提高组一等奖</h4>
+                            <p>刘同学 | 13岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert5.jpg" data-lightbox="certificates" data-title="CSP-J提高组一等奖 - 刘同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert5.jpg" alt="CSP-J提高组一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>全国青少年信息学奥林匹克联赛一等奖</h4>
+                            <p>陈同学 | 16岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert6.jpg" data-lightbox="certificates" data-title="全国青少年信息学奥林匹克联赛一等奖 - 陈同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert6.jpg" alt="全国青少年信息学奥林匹克联赛一等奖证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-trophy-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>Codeforces Master级别</h4>
+                            <p>杨同学 | 17岁</p>
+                            <div class="award-year">2023</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert7.jpg" data-lightbox="certificates" data-title="Codeforces Master级别 - 杨同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert7.jpg" alt="Codeforces Master级别证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>APIO亚太信息学奥赛铜牌</h4>
+                            <p>周同学 | 16岁</p>
+                            <div class="award-year">2022</div>
+                        </div>
+                        <div class="award-certificate">
+                            <a href="assets/images/certificates/cert8.jpg" data-lightbox="certificates" data-title="APIO亚太信息学奥赛铜牌 - 周同学" onclick="return false;">
+                                <img src="assets/images/certificates/cert8.jpg" alt="APIO亚太信息学奥赛铜牌证书" class="certificate-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="awards-stats">
+                <div class="row g-4 text-center">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">58+</div>
+                            <div class="stat-label">国家级奖项</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">120+</div>
+                            <div class="stat-label">省级奖项</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">获奖率</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">国际赛事</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- 页脚部分 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关于我们</h5>
+                        <ul class="footer-links">
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="faq.html">常见问题</a></li>
+                            <li><a href="feedback.html">意见反馈</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>学习资源</h5>
+                        <ul class="footer-links">
+                            <li><a href="courses.html">课程中心</a></li>
+                            <!-- <li><a href="#">学习路径</a></li> -->
+                            <li><a href="http://oj.1024code.top">专属平台</a></li>
+                            <li><a href="tools.html">编程工具</a></li>
+                            <li><a href="https://blog.y-liberty.cn">学习社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>赛事中心</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">NOI信息学奥赛</a></li>
+                            <li><a href="#">CSP认证考试</a></li>
+                            <li><a href="#">蓝桥杯大赛</a></li>
+                            <li><a href="#">ICode系列赛事</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关注我们</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="bi bi-wechat"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-tencent-qq"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-sina-weibo"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                        <!-- <div class="qrcode-container mt-3">
+                            <img src="assets/images/qrcode.png" alt="关注我们的微信公众号" class="qrcode">
+                            <p class="qrcode-text">扫码关注公众号</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="partner-links">
+                            <h5>友情链接</h5>
+                            <div class="partner-list">
+                                <a href="#">中国信息学奥林匹克</a>
+                                <a href="#">全国青少年信息学奥赛</a>
+                                <a href="#">蓝桥杯大赛</a>
+                                <a href="#">CodeForces</a>
+                                <a href="#">USACO</a>
+                                <a href="#">LeetCode</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">©2020-2024 编程教育平台 版权所有</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="legal-links">
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">用户协议</a></li>
+                            <li><a href="#">版权声明</a></li>
+                            <li><a href="#">免责声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p class="icp">粤ICP备XXXXXXXX号-X | 粤公网安备XXXXXXXXXXXXX号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <!-- 添加Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // 配置Lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "证书 %1 / %2",
+            'fadeDuration': 300
+        });
+        
+        // 自定义证书点击事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificateImages = document.querySelectorAll('.certificate-img');
+            
+            certificateImages.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const link = this.parentElement;
+                    const href = link.getAttribute('href');
+                    const title = link.getAttribute('data-title');
+                    
+                    // 手动触发lightbox
+                    lightbox.start(link);
+                    
+                    return false;
+                });
+            });
+        });
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

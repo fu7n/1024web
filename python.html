@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python进阶课程 - 壹零贰肆少儿编程</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <!-- 添加AOS动画库 -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- 添加Swiper轮播库 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+        /* 粒子背景相关样式 */
+        .header-section {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            z-index: 1; /* 降低z-index，确保不会覆盖导航栏 */
+            margin-top: 0; /* 确保不会与导航栏重叠 */
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; /* 降低z-index，确保在内容之下 */
+            pointer-events: none; /* 关键修改：禁止粒子背景捕获鼠标事件 */
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-section .badge {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            margin-right: 10px;
+        }
+        
+        .header-image {
+            position: relative;
+            z-index: 2;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* 确保导航栏在粒子背景上方 */
+        .navbar {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 9999 !important; /* 提高导航栏的z-index到极高值 */
+            width: 100%;
+            background: #ffffff !important; /* 确保背景色 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* 添加阴影增强分隔感 */
+        }
+        
+        /* 确保下拉菜单在最上层 */
+        .dropdown-menu {
+            z-index: 10000 !important; /* 比导航栏更高 */
+        }
+        
+        /* 为了避免内容被导航栏覆盖 */
+        .main-content {
+            position: relative;
+            z-index: 5; /* 确保内容区域在粒子背景之上 */
+        }
+        
+        /* 确保所有交互元素都能正常工作 */
+        .course-detail, 
+        .benefits-section, 
+        .projects-section, 
+        .teachers-section, 
+        .enrollment-section,
+        .site-footer {
+            position: relative;
+            z-index: 5; /* 确保所有内容区域在粒子背景之上 */
+        }
+        
+        /* 确保所有按钮和链接可点击 */
+        a, button, .btn, .nav-link, .dropdown-item {
+            position: relative;
+            z-index: 10; /* 确保交互元素在最上层 */
+        }
+        
+        /* 确保模态框在最上层 */
+        .modal {
+            z-index: 11000 !important;
+        }
+        
+        /* 确保轮播图控制按钮可点击 */
+        .swiper-button-next, 
+        .swiper-button-prev, 
+        .swiper-pagination {
+            z-index: 20 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg inner-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">1024少儿编程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door me-2"></i>首页
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-journal-code me-2"></i>课程体系
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="scratch.html">
+                                <i class="bi bi-puzzle me-2"></i>Scratch启蒙
+                            </a></li>
+                            <li><a class="dropdown-item active" href="python.html">
+                                <i class="bi bi-code-square me-2"></i>Python进阶
+                            </a></li>
+                            <li><a class="dropdown-item" href="cpp.html">
+                                <i class="bi bi-cpu me-2"></i>C++竞赛
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="courses.html">
+                                <i class="bi bi-list-stars me-2"></i>全部课程
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-people me-2"></i>关于我们
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="about.html">
+                                <i class="bi bi-building me-2"></i>机构介绍
+                            </a></li>
+                            <li><a class="dropdown-item" href="competitions.html">
+                                <i class="bi bi-trophy me-2"></i>赛事活动
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-question-circle me-2"></i>帮助与支持
+                            <i class="bi bi-chevron-down ms-2 arrow-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="faq.html">
+                                <i class="bi bi-patch-question me-2"></i>常见问题
+                            </a></li>
+                            <li><a class="dropdown-item" href="feedback.html">
+                                <i class="bi bi-chat-left-text me-2"></i>意见反馈
+                            </a></li>
+                            <li><a class="dropdown-item" href="tools.html">
+                                <i class="bi bi-tools me-2"></i>编程工具
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="contact.html">
+                                <i class="bi bi-envelope me-2"></i>联系我们
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Python课程内容 - 标题部分 -->
+        <section class="header-section">
+            <!-- 粒子背景 -->
+            <div id="particles-js"></div>
+            
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 header-content" data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="display-4 mb-4">Python人工智能编程</h1>
+                        <div class="course-meta mb-4">
+                            <span class="badge bg-primary">适合年龄：9-12岁</span>
+                            <span class="badge bg-success">课时：64节/年</span>
+                            <span class="badge bg-info">国际认证</span>
+                        </div>
+                        <p class="lead">掌握真实编程语言，开发实用程序、AI应用与数据科学项目</p>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="header-image">
+                            <img src="assets/images/python-demo.jpg" class="img-fluid" alt="Python演示">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Python课程内容 -->
+        <section class="course-detail py-5">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card feature-card">
+                            <div class="card-body">
+                                <h4><i class="bi bi-lightbulb me-2"></i>课程特色</h4>
+                                <ul class="list-unstyled">
+                                    <li>✔️ 真实Python语法学习</li>
+                                    <li>✔️ 人工智能基础入门</li>
+                                    <li>✔️ 数据分析与可视化</li>
+                                    <li>✔️ 游戏开发与交互设计</li>
+                                    <li>✔️ 算法思维与编程逻辑</li>
+                                    <li>✔️ 项目制作与成果展示</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="course-outline" id="course-outline">
+                            <h3 class="mb-4">课程大纲</h3>
+                            <div class="accordion" id="outlineAccordion">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#stage1">
+                                            第一阶段：Python基础（16课时）
+                                        </button>
+                                    </h3>
+                                    <div id="stage1" class="accordion-collapse collapse show" data-bs-parent="#outlineAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Python开发环境搭建</li>
+                                                <li>变量、数据类型与运算符</li>
+                                                <li>输入输出与交互式编程</li>
+                                                <li>条件语句与逻辑判断</li>
+                                                <li>循环结构与控制流</li>
+                                                <li>函数定义与调用</li>
+                                                <li>列表与字典操作</li>
+                                                <li>基础项目实战：数字猜谜游戏</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stage2">
+                                            第二阶段：图形界面与游戏开发（16课时）
+                                        </button>
+                                    </h3>
+                                    <div id="stage2" class="accordion-collapse collapse" data-bs-parent="#outlineAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Pygame库入门</li>
+                                                <li>绘图基础与坐标系统</li>
+                                                <li>事件处理与用户交互</li>
+                                                <li>精灵与动画效果</li>
+                                                <li>碰撞检测与游戏物理</li>
+                                                <li>音效与多媒体集成</li>
+                                                <li>游戏设计原理</li>
+                                                <li>中级项目实战：太空射击游戏</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stage3">
+                                            第三阶段：数据科学与可视化（16课时）
+                                        </button>
+                                    </h3>
+                                    <div id="stage3" class="accordion-collapse collapse" data-bs-parent="#outlineAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>NumPy与Pandas基础</li>
+                                                <li>数据读取与预处理</li>
+                                                <li>Matplotlib绘图库</li>
+                                                <li>数据可视化技巧</li>
+                                                <li>统计分析基础</li>
+                                                <li>Web API与数据获取</li>
+                                                <li>CSV与JSON数据格式</li>
+                                                <li>高级项目实战：数据分析仪表盘</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stage4">
+                                            第四阶段：人工智能与机器学习（16课时）
+                                        </button>
+                                    </h3>
+                                    <div id="stage4" class="accordion-collapse collapse" data-bs-parent="#outlineAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>AI与机器学习概念</li>
+                                                <li>Scikit-learn库入门</li>
+                                                <li>简单分类算法</li>
+                                                <li>图像识别基础</li>
+                                                <li>自然语言处理入门</li>
+                                                <li>聊天机器人开发</li>
+                                                <li>AI伦理与未来发展</li>
+                                                <li>综合项目实战：智能推荐系统</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 课程收益部分 -->
+        <section class="benefits-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">学习Python的收益</h2>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h4>未来职业发展</h4>
+                            <p>Python是人工智能和数据科学领域的首选语言，学习Python为孩子未来职业发展打下坚实基础。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="bi bi-braces"></i>
+                            </div>
+                            <h4>实用编程能力</h4>
+                            <p>掌握真实编程语言和语法，能够开发实用程序和应用，解决实际问题。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <h4>竞赛与升学优势</h4>
+                            <p>Python是各类编程竞赛的常用语言，为升学考试和科技竞赛提供优势。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学生作品展示 -->
+        <section class="projects-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">学生优秀作品</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="project-card">
+                            <img src="assets/images/python-project1.jpg" alt="学生项目1" class="img-fluid rounded">
+                            <div class="project-info">
+                                <h4>天气预报应用</h4>
+                                <p>王小明 (11岁)</p>
+                                <p>利用API获取实时天气数据并展示的应用程序</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="project-card">
+                            <img src="assets/images/python-project2.jpg" alt="学生项目2" class="img-fluid rounded">
+                            <div class="project-info">
+                                <h4>智能聊天机器人</h4>
+                                <p>李小红 (12岁)</p>
+                                <p>基于自然语言处理技术的简易聊天机器人</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="project-card">
+                            <img src="assets/images/python-project3.jpg" alt="学生项目3" class="img-fluid rounded">
+                            <div class="project-info">
+                                <h4>数据可视化仪表盘</h4>
+                                <p>张小华 (10岁)</p>
+                                <p>分析和展示学校图书馆借阅数据的可视化平台</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="student-projects.html" class="btn btn-outline-primary">查看更多作品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教师团队 -->
+        <section class="teachers-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">专业教师团队</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="teacher-card">
+                            <img src="assets/images/teacher1.jpg" alt="王老师" class="teacher-img">
+                            <div class="teacher-info">
+                                <h4>王教授</h4>
+                                <p class="teacher-title">人工智能专家</p>
+                                <p>清华大学计算机博士，10年Python教学经验，曾任谷歌AI工程师</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="teacher-card">
+                            <img src="assets/images/teacher2.jpg" alt="李老师" class="teacher-img">
+                            <div class="teacher-info">
+                                <h4>李老师</h4>
+                                <p class="teacher-title">数据科学导师</p>
+                                <p>北京大学硕士，专注青少年数据分析教学，曾指导多名学生获全国大赛金奖</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="teacher-card">
+                            <img src="assets/images/teacher3.jpg" alt="张老师" class="teacher-img">
+                            <div class="teacher-info">
+                                <h4>张老师</h4>
+                                <p class="teacher-title">游戏开发讲师</p>
+                                <p>知名游戏公司前技术总监，8年青少年编程教育经验，擅长项目式教学</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 报名信息 -->
+        <section class="enrollment-section py-5">
+            <div class="container">
+                <div class="enrollment-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7" data-aos="fade-right">
+                            <h2 class="mb-4">现在报名，开启Python编程之旅</h2>
+                            <p class="lead mb-4">我们提供灵活的上课时间和小班教学模式，确保每个孩子都能得到充分的关注和指导。</p>
+                            <ul class="enrollment-features">
+                                <li><i class="bi bi-check-circle-fill"></i> 专业教师一对一指导</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 灵活的上课时间安排</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 定期举办编程比赛和展示活动</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 完善的学习进度跟踪系统</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 国际认证考试辅导与报名</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 专属学习资料与课后辅导</li>
+                            </ul>
+                            <div class="enrollment-actions">
+                                <a href="contact.html" class="btn btn-lg btn-primary me-3">
+                                    <i class="bi bi-pencil-square me-2"></i>立即报名
+                                </a>
+                                <a href="#" class="btn btn-lg btn-outline-primary">
+                                    <i class="bi bi-calendar-check me-2"></i>预约试听课
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mt-4 mt-lg-0" data-aos="fade-left">
+                            <div class="enrollment-image">
+                                <img src="assets/images/python-enrollment.jpg" alt="立即报名" class="img-fluid rounded-4 shadow">
+                                <div class="discount-badge">
+                                    <span class="discount-text">限时优惠</span>
+                                    <span class="discount-amount">85折</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关于我们</h5>
+                        <ul class="footer-links">
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="faq.html">常见问题</a></li>
+                            <li><a href="feedback.html">意见反馈</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>学习资源</h5>
+                        <ul class="footer-links">
+                            <li><a href="courses.html">课程中心</a></li>
+                            <!-- <li><a href="#">学习路径</a></li> -->
+                            <li><a href="http://oj.1024code.top">专属平台</a></li>
+                            <li><a href="tools.html">编程工具</a></li>
+                            <li><a href="https://blog.y-liberty.cn">学习社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>赛事中心</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">NOI信息学奥赛</a></li>
+                            <li><a href="#">CSP认证考试</a></li>
+                            <li><a href="#">蓝桥杯大赛</a></li>
+                            <li><a href="#">ICode系列赛事</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5>关注我们</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="bi bi-wechat"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-tencent-qq"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-sina-weibo"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                        <!-- <div class="qrcode-container mt-3">
+                            <img src="assets/images/qrcode.png" alt="关注我们的微信公众号" class="qrcode">
+                            <p class="qrcode-text">扫码关注公众号</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="partner-links">
+                            <h5>友情链接</h5>
+                            <div class="partner-list">
+                                <a href="#">中国信息学奥林匹克</a>
+                                <a href="#">全国青少年信息学奥赛</a>
+                                <a href="#">蓝桥杯大赛</a>
+                                <a href="#">CodeForces</a>
+                                <a href="#">USACO</a>
+                                <a href="#">LeetCode</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">©2020-2024 编程教育平台 版权所有</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="legal-links">
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">用户协议</a></li>
+                            <li><a href="#">版权声明</a></li>
+                            <li><a href="#">免责声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p class="icp">粤ICP备XXXXXXXX号-X | 粤公网安备XXXXXXXXXXXXX号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 添加AOS动画库 -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- 添加Swiper轮播库 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 添加粒子效果库 -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // 初始化AOS动画
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // 滚动到指定位置
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 初始化粒子效果
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3498db"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#3498db",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // 添加页面滚动效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 添加滚动到顶部按钮
+            const scrollTopBtn = document.createElement('button');
+            scrollTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+            scrollTopBtn.className = 'scroll-top-btn';
+            document.body.appendChild(scrollTopBtn);
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
